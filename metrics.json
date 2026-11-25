@@ -1,0 +1,4 @@
+{"model":"Logistic regression with standardized features","n_total":147,"n_test":30,"test_accuracy":0.9333,"cv_accuracy":0.957,
+"confusion":[[10,0,0],[0,9,1],[0,1,9]],
+"per_class":{"setosa":{"precision":1.0,"recall":1.0},"versicolor":{"precision":0.9,"recall":0.9},"virginica":{"precision":0.9,"recall":0.9}},
+"notes":"Model: logistic regression on standardized features, trained on the 147 unique rows of iris.csv. With only 30 test flowers, one mistake moves accuracy by about 3 points, so treat the figures as estimates. The final model is retrained on all rows. It only knows these three species and will assign any input to one of them."}
