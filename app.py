@@ -1,5 +1,6 @@
 import csv, json, math, os
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, Response, request, jsonify
+from page import HTML
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 FEATURES = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
@@ -37,8 +38,8 @@ def parse_row(d):
 app = Flask(__name__)
 
 @app.get("/")
-def index():                                      # on Vercel, public/index.html is served by the CDN instead
-    return send_from_directory(os.path.join(BASE, "public"), "index.html")
+def index():
+    return Response(HTML, mimetype="text/html")
 
 @app.get("/health")
 def health():
